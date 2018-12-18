@@ -1,0 +1,7 @@
+extends layout
+
+block Content
+  h1 #{title}
+  ul
+    each article, i in articles
+      li= article.author

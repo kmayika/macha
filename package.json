@@ -1,0 +1,26 @@
+{
+  "name": "matcha",
+  "version": "1.0.0",
+  "description": "simple dating site",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app"
+  },
+  "author": "kmayika",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/kmayika/matcha.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kmayika/matcha/issues"
+  },
+  "homepage": "https://github.com/kmayika/matcha#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.0",
+    "pug": "^2.0.3"
+  },
+  "devDependencies": {}
+}
