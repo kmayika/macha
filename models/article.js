@@ -1,13 +1,14 @@
 let mongoose = require('mongoose');
 
-//cretae article schema
+//article schema: for different preferences
+
 let articleSchema = mongoose.Schema({
   title:{
     type: String,
     required: true
   },
   author:{
-    type: String,
+    type:String,
     required: true
   },
   body:{
@@ -15,5 +16,5 @@ let articleSchema = mongoose.Schema({
     required: true
   }
 });
-
+//compile schema into model
 let Article = module.exports = mongoose.model('Article', articleSchema);
