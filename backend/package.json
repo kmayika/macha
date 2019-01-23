@@ -1,0 +1,25 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "dating site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/kmayika/matcha.git"
+  },
+  "author": "kmayika",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kmayika/matcha/issues"
+  },
+  "homepage": "https://github.com/kmayika/matcha#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.6"
+  }
+}
