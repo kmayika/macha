@@ -20,6 +20,7 @@ html
               a(href='/users/login') Login
     .container
       != messages('message', locals)
+      //- div(class="alert alert-danger") #{message}
       if errors
         each error, i in errors
           div(class="alert alert-danger") #{error.msg}

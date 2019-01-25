@@ -8,6 +8,7 @@ const config = require('./config/database');
 const passport = require('passport');
 const messages = require('express-messages');
 
+
 const app = express();
 //connect to database
 mongoose.connect(config.database,{ useNewUrlParser: true });
@@ -43,9 +44,9 @@ app.use(function(req, res, next){
 
 //session middleware
 
-app.use(session({ cookie: { maxAge: 60000 }, 
+app.use(session({ cookie: { maxAge: 60000 },
     secret: 'babulale',
-    resave: false, 
+    resave: false,
     saveUninitialized: false}));
 
 //passport config

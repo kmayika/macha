@@ -15,6 +15,7 @@ router.get('/register', function(req, res){
 
 //register process
 router.post('/register', function(req, res){
+    const User = require('../models/users');
     const name = req.body.name;
     const username = req.body.username;
     const email = req.body.email;
@@ -28,7 +29,6 @@ router.post('/register', function(req, res){
     req.checkBody('username', 'name is required').notEmpty();
     req.checkBody('password', 'password is required').notEmpty();
     req.checkBody('confirm_pass', 'passwords do not match').equals(req.body.password);
-
     let errors = req.validationErrors();
 
     if (errors){
@@ -38,7 +38,7 @@ router.post('/register', function(req, res){
     }
     else
     {
-        let new_user = new user({
+        let new_user = new User({
             name: name,
             email: email,
             username: username,
@@ -74,7 +74,9 @@ router.post('/register', function(req, res){
 });
 //login form
 router.get('/login', function(req, res){
-    res.render('login');
+    res.render('login',{
+      message: req.flash('error')
+    });
 });
 //login process
 router.post('/login', function(req, res, next){
@@ -87,14 +89,14 @@ router.post('/login', function(req, res, next){
 
 /*--- to see what callbacks or errors appear ---*/
 // router.post('/login',passport.authenticate('local',{}),(req,res)=>{
-//     //by default this send Unauthorized on bad authenticate 
+//     //by default this send Unauthorized on bad authenticate
 //     res.send(req.session)});
 
 //logout
 
 router.get('/logout', function(req, res){
-    req.logout();
+    req.session.destroy();
     req.flash('success', 'You are logged Out');
     res.redirect('/users/login');
-});
+  });
 module.exports = router;
